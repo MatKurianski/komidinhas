@@ -1,6 +1,5 @@
-package com.kurianski.komidinhas.adapter.datastore
+package com.kurianski.komidinhas.application.datastore
 
-import com.kurianski.komidinhas.application.usecase.CreateProduct
 import com.kurianski.komidinhas.domain.product.CreateProductRequest
 import com.kurianski.komidinhas.domain.product.Product
 import java.util.*

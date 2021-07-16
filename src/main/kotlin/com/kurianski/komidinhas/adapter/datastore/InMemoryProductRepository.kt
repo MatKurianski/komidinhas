@@ -1,5 +1,7 @@
 package com.kurianski.komidinhas.adapter.datastore
 
+import com.kurianski.komidinhas.adapter.controller.mapper.toProduct
+import com.kurianski.komidinhas.application.datastore.ProductRepository
 import com.kurianski.komidinhas.domain.product.CreateProductRequest
 import com.kurianski.komidinhas.domain.product.Product
 import org.springframework.stereotype.Component
@@ -12,11 +14,7 @@ class InMemoryProductRepository : ProductRepository {
 
     override fun addProduct(createProductRequest: CreateProductRequest): Product {
         val productId = UUID.randomUUID()
-
-        val product = createProductRequest.let {
-            Product(productId, it.name, it.description, it.price, it.imageUrl)
-        }
-
+        val product = createProductRequest.toProduct(productId)
         products[productId] = product
         return product
     }

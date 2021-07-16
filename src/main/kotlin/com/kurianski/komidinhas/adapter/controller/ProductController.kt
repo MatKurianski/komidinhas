@@ -3,24 +3,27 @@ package com.kurianski.komidinhas.adapter.controller
 import com.kurianski.komidinhas.adapter.controller.mapper.toProductResponse
 import com.kurianski.komidinhas.adapter.controller.response.ProductResponse
 import com.kurianski.komidinhas.application.usecase.CreateProduct
+import com.kurianski.komidinhas.application.usecase.GetProduct
 import com.kurianski.komidinhas.domain.product.CreateProductRequest
-import com.kurianski.komidinhas.domain.product.Product
-import org.apache.coyote.Response
 import org.springframework.http.HttpStatus
-import org.springframework.http.RequestEntity
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
+import java.util.*
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/products")
 class ProductController(
-    val createProduct: CreateProduct
+    val createProduct: CreateProduct,
+    val getProduct: GetProduct
 ) {
 
-    @PostMapping
+    @GetMapping("/{id}")
+    fun getProduct(@PathVariable id: UUID): ResponseEntity<Any> {
+        val product = getProduct.execute(id)?.toProductResponse()
+        return if (product != null) ResponseEntity.ok(product) else ResponseEntity.notFound().build()
+    }
+
+    @PostMapping("/")
     fun createProduct(@RequestBody createProductRequest: CreateProductRequest): ResponseEntity<ProductResponse> {
         val product = createProduct.execute(createProductRequest)
         return ResponseEntity(product.toProductResponse(), HttpStatus.CREATED)
