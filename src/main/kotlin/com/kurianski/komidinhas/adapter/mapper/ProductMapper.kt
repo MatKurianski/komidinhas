@@ -1,4 +1,4 @@
-package com.kurianski.komidinhas.adapter.controller.mapper
+package com.kurianski.komidinhas.adapter.mapper
 
 import com.kurianski.komidinhas.adapter.controller.response.ProductResponse
 import com.kurianski.komidinhas.domain.product.CreateProductRequest

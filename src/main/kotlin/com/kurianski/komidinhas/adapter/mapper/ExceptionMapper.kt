@@ -1,4 +1,4 @@
-package com.kurianski.komidinhas.adapter.controller.mapper
+package com.kurianski.komidinhas.adapter.mapper
 
 import com.kurianski.komidinhas.adapter.controller.response.ErrorResponse
 import com.kurianski.komidinhas.domain.exception.UserAlreadyExists

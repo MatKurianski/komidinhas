@@ -1,6 +1,6 @@
 package com.kurianski.komidinhas.adapter.controller
 
-import com.kurianski.komidinhas.adapter.controller.mapper.toProductResponse
+import com.kurianski.komidinhas.adapter.mapper.toProductResponse
 import com.kurianski.komidinhas.adapter.controller.response.ProductResponse
 import com.kurianski.komidinhas.application.usecase.CreateProduct
 import com.kurianski.komidinhas.application.usecase.GetProduct

@@ -1,6 +1,5 @@
-package com.kurianski.komidinhas.adapter.entity
+package com.kurianski.komidinhas.adapter.datastore.entity
 
-import org.hibernate.annotations.CreationTimestamp
 import java.time.LocalDateTime
 import javax.persistence.*
 
