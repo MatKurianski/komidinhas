@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component
 import java.util.*
 
 @Component
-class GetProduct(val productRepository: ProductRepository) {
+class GetProduct(private val productRepository: ProductRepository) {
     fun execute(productId: UUID): Product? = productRepository.getById(productId)
 }

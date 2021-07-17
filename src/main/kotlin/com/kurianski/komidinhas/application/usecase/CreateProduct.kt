@@ -6,7 +6,7 @@ import com.kurianski.komidinhas.domain.product.Product
 import org.springframework.stereotype.Component
 
 @Component
-class CreateProduct (val productRepository: ProductRepository) {
+class CreateProduct (private val productRepository: ProductRepository) {
     fun execute(createProductRequest: CreateProductRequest): Product =
         productRepository.addProduct(createProductRequest)
 }

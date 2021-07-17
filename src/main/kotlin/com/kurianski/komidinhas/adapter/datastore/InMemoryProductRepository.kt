@@ -1,6 +1,6 @@
 package com.kurianski.komidinhas.adapter.datastore
 
-import com.kurianski.komidinhas.adapter.controller.mapper.toProduct
+import com.kurianski.komidinhas.adapter.mapper.toProduct
 import com.kurianski.komidinhas.application.datastore.ProductRepository
 import com.kurianski.komidinhas.domain.product.CreateProductRequest
 import com.kurianski.komidinhas.domain.product.Product

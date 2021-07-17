@@ -1,4 +1,4 @@
-package com.kurianski.komidinhas.adapter.controller.response
+package com.kurianski.komidinhas.adapter.controller.entity.response
 
 import java.math.BigDecimal
 

@@ -1,7 +1,7 @@
 package com.kurianski.komidinhas.adapter.controller
 
-import com.kurianski.komidinhas.adapter.controller.mapper.toProductResponse
-import com.kurianski.komidinhas.adapter.controller.response.ProductResponse
+import com.kurianski.komidinhas.adapter.mapper.toProductResponse
+import com.kurianski.komidinhas.adapter.controller.entity.response.ProductResponse
 import com.kurianski.komidinhas.application.usecase.CreateProduct
 import com.kurianski.komidinhas.application.usecase.GetProduct
 import com.kurianski.komidinhas.domain.product.CreateProductRequest
@@ -13,8 +13,8 @@ import java.util.*
 @RestController
 @RequestMapping("/products")
 class ProductController(
-    val createProduct: CreateProduct,
-    val getProduct: GetProduct
+    private val createProduct: CreateProduct,
+    private val getProduct: GetProduct
 ) {
 
     @GetMapping("/{id}")

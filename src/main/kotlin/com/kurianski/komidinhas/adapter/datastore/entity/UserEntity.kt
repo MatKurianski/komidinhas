@@ -1,6 +1,5 @@
-package com.kurianski.komidinhas.adapter.entity
+package com.kurianski.komidinhas.adapter.datastore.entity
 
-import org.hibernate.annotations.CreationTimestamp
 import java.time.LocalDateTime
 import javax.persistence.*
 
@@ -12,5 +11,5 @@ data class UserEntity(
     val email: String,
     val created_on: LocalDateTime
 ) {
-    constructor() : this("", "", "", LocalDateTime.now())
+    constructor() : this(username = "", password = "", email = "", created_on = LocalDateTime.now())
 }

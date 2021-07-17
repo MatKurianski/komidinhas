@@ -1,6 +1,6 @@
-package com.kurianski.komidinhas.adapter.controller.mapper
+package com.kurianski.komidinhas.adapter.mapper
 
-import com.kurianski.komidinhas.adapter.controller.response.ErrorResponse
+import com.kurianski.komidinhas.adapter.controller.entity.response.DefaultResponse
 import com.kurianski.komidinhas.domain.exception.UserAlreadyExists
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -12,4 +12,4 @@ fun Throwable.toErrorResponseEntity(): ResponseEntity<Any> =
     }
 
 private fun makeErrorResponse(httpStatus: HttpStatus, message: String? = null): ResponseEntity<Any> =
-    ResponseEntity.status(httpStatus).body(ErrorResponse(message ?: ""))
+    ResponseEntity.status(httpStatus).body(DefaultResponse(message ?: ""))
