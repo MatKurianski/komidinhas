@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    network_mode: host
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    network_mode: host
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml

@@ -7,6 +7,7 @@ import com.kurianski.komidinhas.adapter.mapper.toErrorResponseEntity
 import com.kurianski.komidinhas.adapter.service.TokenService
 import com.kurianski.komidinhas.application.usecase.user.CreateUser
 import com.kurianski.komidinhas.domain.user.CreateUserRequest
+import io.micrometer.core.annotation.Counted
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.security.authentication.AuthenticationManager
@@ -31,6 +32,7 @@ class AuthenticationController(
         )
 
     @PostMapping("/login")
+    @Counted(value = "login")
     fun getUserAuthToken(@RequestBody loginRequest: LoginRequest): ResponseEntity<Any> {
         val loginData = UsernamePasswordAuthenticationToken(loginRequest.username, loginRequest.password)
 

@@ -34,6 +34,8 @@ class SecurityConfiguration(
         http.authorizeRequests()
             .antMatchers(HttpMethod.POST, "/auth/signup").permitAll()
             .antMatchers(HttpMethod.POST, "/auth/login").permitAll()
+            .antMatchers(HttpMethod.GET, "/actuator/prometheus").permitAll()
+            .antMatchers(HttpMethod.GET, "/actuator/health").permitAll()
             .anyRequest().authenticated()
             .and().csrf().disable()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
